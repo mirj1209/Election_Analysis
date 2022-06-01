@@ -26,8 +26,6 @@ total_votes = 0
 
 candidate_options = []
 
-# Declare the empty dictionary.
-
 candidate_votes = {}
 
 # Winning Candidate and Winning Count Tracker.
@@ -65,6 +63,21 @@ with open(file_to_load) as election_data:
         # Add a vote to that candidate's count.
         candidate_votes[candidate_name] += 1
 
+#Save the results to our text file.
+with open(file_to_save, "w") as txt_file:
+
+# Print the final vote count to the terminal.
+    election_results = (
+        f"\nElection Results\n"
+        f"------------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"------------------------\n")
+    print(election_results, end="")
+
+    #Save the final vote count to the text file.
+    txt_file.write(election_results)
+
+
 
 # Determine the percentage of votes for each candidate by looping through the counts. 
 # Iterate through the candidate list. 
@@ -76,8 +89,11 @@ with open(file_to_load) as election_data:
     # Calculate the percentage of votes. 
         vote_percentage = float(votes) / float(total_votes) * 100
 
-    # To do: print out each candidate's name, vote count, and percentage of votes to the terminal.
-        print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+    # print out each candidate's name, vote count, and percentage of votes to the terminal.
+        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        print(candidate_results)
+    # Save the candidate results to our text file.
+        txt_file.write(candidate_results) 
 
    # Determine winning vote count and candidate
         # 1. Determine if the votes are greater than the winning count.
@@ -94,9 +110,9 @@ with open(file_to_load) as election_data:
             f"Winning Vote Count: {winning_count:,}\n"
             f"Winning Percentage: {winning_percentage:.1f}%\n"
             f"--------------------------\n")
-    print(winning_candidate_summary)
+    #print(winning_candidate_summary)
+    txt_file.write(winning_candidate_summary)        
 
-# To do: print out each the winning candidaet, vote count and percentage to terminal.
 
        
 
