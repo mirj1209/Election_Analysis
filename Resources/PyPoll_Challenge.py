@@ -22,6 +22,7 @@ counties_names = []
 county_turnout = {}
 
 
+
 # Track the winning candidate, vote count and percentage
 winning_candidate = ""
 winning_count = 0
@@ -81,6 +82,7 @@ with open(file_to_load) as election_data:
 
         # 5: Add a vote to that county's vote count.
         county_turnout[county_name] += 1 
+        
 
 
 
@@ -100,29 +102,24 @@ with open(file_to_save, "w") as txt_file:
 
     # 6a: Write a for loop to get the county from the county dictionary.
     for county_name in county_turnout:
-
+        
         # 6b: Retrieve the county vote count.
         county_votes = county_turnout.get(county_name)
 
         # 6c: Calculate the percentage of votes for the county.
         county_votes_percentage = float(county_votes) / float(total_votes) * 100
-        print(county_votes_percentage)
 
          # 6d: Print the county results to the terminal.
         county_results = (
-            f"County Votes: \n"
-            f"{county_turnout,0}\n"
-            f"{county_turnout,1}\n"
-            f"{county_turnout,2}\n")
+            f"{county_turnout:}: {county_votes_percentage:.1f}%\n")
         print(county_results, end="")
+
 
          # 6e: Save the county votes to a text file.
         txt_file.write(county_results)
-        print(county_turnout[county_name])
-        print(largest_turnout)
-        print(county_name)
+        
          # 6f: Write an if statement to determine the winning county and get its vote count.
-        if (county_turnout[county_name] > largest_turnout) and (county_votes_percentage > largest_turnout_percentage):
+        if (county_votes_percentage > largest_turnout_percentage):
             largest_turnout = county_turnout
             largest_turnout_county = county_name
             largest_turnout_percentage = county_votes_percentage
@@ -132,7 +129,7 @@ with open(file_to_save, "w") as txt_file:
     # 7: Print the county with the largest turnout to the terminal.
     largest_turnout_results = (
         f"-------------------------\n"
-        f"Largest County turnout: {county_name}"
+        f"Largest County turnout: {largest_turnout_county}\n"
         f"-------------------------\n")
     print(largest_turnout_results)
 
