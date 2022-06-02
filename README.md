@@ -34,13 +34,13 @@ The purpose of the election audit is to make the data taken from all voters much
 ### Election-Audit results
 -	Total votes were: 369,711
 -	Votes per county:
-	-Jefferson: 38,855 holding 10.5% of the overall votes
-	-Denver: 306,055 holding 82.8%
-	-Arapahoe: 24,801 holding 6.7% of all voters
+	- Jefferson: 38,855 holding 10.5% of the overall votes
+	- Denver: 306,055 holding 82.8%
+	- Arapahoe: 24,801 holding 6.7% of all voters
 -	Votes per candidate
-	-Charles Casper Stockham had 85,213 votes holding a percentage of 23.0%
-	-Diana DeGette had 272,892 votes holding a percentage of 73.8%
-	-Raymon Anthony Doane had 11,606 votes holding a percentage of 3.1%
+	- Charles Casper Stockham had 85,213 votes holding a percentage of 23.0%
+	- Diana DeGette had 272,892 votes holding a percentage of 73.8%
+	- Raymon Anthony Doane had 11,606 votes holding a percentage of 3.1%
 
 Thus, Denver had the highest amount of voters and therefore, the county with the most numerical weight. And the winner of the election was Diana DeGette 
 
